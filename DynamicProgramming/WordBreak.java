@@ -29,7 +29,9 @@ class WordBreak {
 		return dict.contains(str);
 	}
 
-	public static String wordbreak(String str, int start, int end, boolean flag) {
+	public static String wordbreak(String str, int start, int end, boolean flag, String result) {
+
+		String result=null;
 
 		if(flag) {
 
@@ -41,28 +43,30 @@ class WordBreak {
 
 
 		for(int i=start;i<end;i++) {
+
 			String left = wordbreak(str, start, end-i, true);
 			String right = wordbreak(str, end-i, end, true);
+
 			if(left!=null && right!=null) {
 				System.out.println(left+" "+right);
-				return left+right;
+				result= left+right;
 			}
-			// if(left!=null) {
-			// 	System.out.println(left);
-			// 	return left;
-			// }
-			// if(right!=null) {
-			// 	System.out.println(right);
-			// 	return right;
-			// }
+			if(left!=null && right==null) {
+				//System.out.println(left);
+				result= left;
+			}
+			if(right!=null && left==null) {
+				//System.out.println(right);
+				result= right;
+			}
 		}
 
-		return null;
+		return result;
 	}
 
 	public static void main(String args[]) {
 
-		String str="samsung";
-		wordbreak(str,0,str.length(),false);
+		String str="likesamsung";
+		wordbreak(str,0,str.length(),false,"");
 	}
 }
