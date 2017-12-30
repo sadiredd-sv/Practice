@@ -26,8 +26,10 @@ class BinaryTreeMaxDepth {
 
 	void levelOrderTravesal(Node n){
 
-		for(int i=1; i<=maxDepth(n); i++)
+		for(int i=1; i<=maxDepth(n); i++) {
 			recursionLevelOrderTraversalUtil(n,i);
+			System.out.println();
+		}
 	}
 
 	/* Recursion - Level Order */
@@ -65,6 +67,8 @@ class BinaryTreeMaxDepth {
 		b.root = new Node(1);
 		b.root.left = new Node(2);
         b.root.right = new Node(3);
+        b.root.right.left = new Node(9);
+        b.root.right.right = new Node(10);
         b.root.left.left = new Node(4);
        	b.root.left.right = new Node(5);
        	b.root.left.right.left = new Node(8);
