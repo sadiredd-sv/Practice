@@ -2,6 +2,11 @@
 
 https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
 
+		  1
+	2			3
+4	   5	9		10
+	8	 11
+
 */
 
 import java.util.*;
@@ -22,14 +27,18 @@ class BoundaryTree {
 
 	void left(Node n ) {
 
-		if( !(n.left==null && n.right==null) ) {
-			System.out.println(n.value);
+		if(n==null)
+			return;
 
-			if(n.left!=null)
-				left(n.left);
-			else if(n.right!=null)
-				left(n.right);
+		if(n.left!=null) {
+			System.out.println(n.value);
+			left(n.left);
 		}
+		else if(n.right!=null) {
+			System.out.println(n.value);
+			left(n.right);
+		}
+
 	}
 
 	void leaves(Node n) {
@@ -47,19 +56,22 @@ class BoundaryTree {
 
 	void right(Node n) {
 
-		if( !(n.left==null && n.right==null) ) {
+		if(n==null)
+			return;
 
-			if(n.right!=null)
-				left(n.right);
-			else if(n.left!=null)
-				left(n.left);
-
+		if(n.right!=null) {
+			right(n.right);
 			System.out.println(n.value);
 		}
+		else if(n.left!=null) {
+			right(n.left);
+			System.out.println(n.value);
+		}
+
 	}
 
 	void boundary(Node n) {
-		left(n);
+		left(n.left);
 		leaves(n);
 		right(n.right);
 	}
