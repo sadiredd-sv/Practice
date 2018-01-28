@@ -16,7 +16,7 @@ for(int i=1; i<n; i++) {
 }
 
 
-
+1000 0000
 
 
 Algorithm ( O(n) ) - Linear solution :
