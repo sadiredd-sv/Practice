@@ -69,8 +69,8 @@ class MergeSort {
 
 	public static void main(String args[]) {
 		MergeSort m = new MergeSort();
-		int arr[] = {12, 11, 13, 5, 6, 7};
-		//int arr[] = {30, 20, 6, 4, 5, 50};
+		//int arr[] = {12, 11, 13, 5, 6, 7};
+		int arr[] = {30, 20, 6, 4, 5, 50};
 		m.sort(arr, 0, arr.length-1);
 		System.out.println(Arrays.toString(arr));
 		System.out.println("Count: "+m.count);
