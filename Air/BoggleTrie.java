@@ -62,7 +62,6 @@ class BoggleTrie {
     }
 
     public static void searchWords(char boggle[][], TrieNode root) {
-
         boolean visited[][] = new boolean[boggle.length][boggle[0].length];
 
         for(int i=0; i< boggle.length; i++) {

@@ -1,3 +1,7 @@
+/*
+*  It takes O(log(m)) to insert an element to the heap
+* */
+
 import java.util.*;
 
 class ArrayContainer implements Comparable<ArrayContainer> {
